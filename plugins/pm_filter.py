@@ -636,9 +636,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup = InlineKeyboardMarkup(buttons)
             await query.message.edit_reply_markup(reply_markup)
     await query.answer('𝙿𝙻𝙴𝙰𝚂𝙴 𝚂𝙷𝙰𝚁𝙴 𝙰𝙽𝙳 𝚂𝚄𝙿𝙿𝙾𝚁𝚃')
+
     if SELF_DELETE:
         await asyncio.sleep(SELF_DELETE_SECONDS)
         await query.delete_message()
+        
+    await auto_filter(client, query)
         
 async def auto_filter(client, msg, spoll=False):
     if not spoll:
