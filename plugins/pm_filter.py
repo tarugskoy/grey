@@ -640,7 +640,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     if SELF_DELETE:
         await asyncio.sleep(SELF_DELETE_SECONDS)
         await query.delete_message()
-except Exception as e:
+    except Exception as e:
         logger.exception("Error occurred during cb_handler execution: %s", e)   
     await auto_filter(client, query)
         
