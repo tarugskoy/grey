@@ -670,11 +670,6 @@ async def auto_filter(client, msg, spoll=False):
             ]
             for file in files
         ]
-        # Schedule the deletion of the message after a certain time
-        delete_delay = 1200  # Set the delay time in seconds (e.g., 60 seconds)
-        await asyncio.sleep(delete_delay)
-        # Delete the message containing the inline keyboard buttons
-        await message.delete()
     else:
         btn = [
             [
@@ -689,12 +684,7 @@ async def auto_filter(client, msg, spoll=False):
             ]
             for file in files
         ]
-        # Schedule the deletion of the message after a certain time
-        delete_delay = 1200  # Set the delay time in seconds (e.g., 60 seconds)
-        await asyncio.sleep(delete_delay)
-        # Delete the message containing the inline keyboard buttons
-        await message.delete()
-        
+
     btn.insert(0,
         [
             InlineKeyboardButton(text="⚡ʜᴏᴡ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ⚡", url='https://youtu.be/A6_YkUKgbgo')
